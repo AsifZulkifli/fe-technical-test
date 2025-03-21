@@ -65,11 +65,20 @@ html, body {
 }
 
 .home-card {
-  display: none; /* Default hidden */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  position: absolute;
+  visibility: hidden; /* Ensures they don’t interfere when hidden */
 }
 
 .home-card[data-active="true"] {
-  display: block; /* Only active cards are shown */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+  visibility: visible; /* Show smoothly */
 }
 
 #more-homes-btn {
