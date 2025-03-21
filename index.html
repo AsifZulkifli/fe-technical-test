@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>FE Technical Test</title>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              'sm': '640px',
+              'md': '960px',
+              'lg': '1024px',
+              'xl': '1300px',
+              '2xl': '1441px',
+              '3xl': '1800px',
+            },
+            spacing: {
+              '19': '76px',
+            },
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <nav class="bg-white shadow-lg w-full fixed py-4 top-0 z-50">
+      <div class="flex justify-between items-center lg:px-12 px-6 xl:px-20">
+        <div>
+          <a href="">
+            <img class="w-[80px]" src="assets/Links/company.png" alt="">
+          </a>
+        </div>
+        <div class="flex items-center max-lg:hidden">
+          <a id="scrollButton" class="text-[18px] font-PoppinsBold hover:opacity-60 px-10 uppercase" href="#features">Features</a>
+          <a class="text-[18px] font-PoppinsBold hover:opacity-60 px-10 uppercase" href="#projects">Projects</a>
+          <a class="pl-24 pr-10" href="#registration">
+            <p class="bg-[#669999] text-[16px] text-white font-PoppinsBold hover:opacity-80 px-8 py-4">Register Now</p>
+          </a>
+        </div>
+        <div class="flex gap-4 items-center lg:hidden">
+          <a class="pl-4 pr-2" href="#registration">
+            <p class="bg-[#669999] rounded-lg text-[18px] text-white font-PoppinsBold hover:opacity-80 px-8 py-2">Register</p>
+          </a>
+          <button id="menu-toggle" class="lg:hidden">
+            <i class="text-[32px] fa-bars fa-solid"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="bg-white w-full duration-300 ease-in-out fixed invisible lg:hidden opacity-0 top-20 transition-opacity">
+        <div class="flex flex-col justify-center items-center py-10">
+          <a class="text-[24px] font-PoppinsBold hover:opacity-60 px-10 py-2 uppercase" href="#features">Features</a>
+          <a class="text-[24px] font-PoppinsBold hover:opacity-60 px-10 py-2 uppercase" href="#projects">Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bg-white py-10"></div>
+
+    <section id="hero">
+      <div class="flex bg-[url(assets/Links/mobile_banner.png)] bg-center bg-cover bg-no-repeat w-full items-start max-sm:justify-center min-h-screen relative sm:bg-[url(assets/Links/banner_desktop.png)] sm:items-center">
+        <img class="absolute left-[30%] rotate-180 scale-[2] sm:hidden top-[7%]" src="assets/Links/element.png" alt="">
+        <div data-aos="fade-right" class="flex flex-col justify-center w-[60%] items-center lg:w-[40%] pt-16 sm:items-start sm:pl-12 sm:w-[50%] xl:pl-24 xl:w-[35%]">
+          <h3 class="text-[22px] text-black font-PoppinsRegular sm:text-[24px] sm:text-white xl:text-[32px]">Live in a</h3>
+          <h1 class="text-[#669999] text-[65px] font-BerlingskeSerifRegular leading-[0.8] max-sm:text-center sm:text-white xl:text-[100px]">Nature Sanctuary</h1>
+          <h5 class="text-[12px] font-PoppinsRegular max-sm:text-center pt-6 sm:text-[16px] sm:text-white xl:pt-8 xl:text-[20px]">Lavishly designed with private gardens, canals and a 20-acre greenhouse.</h5>
+        </div>
+      </div>
+    </section>
+       
+
+    <section id="features" class="scroll-mt-20">
+      <div class="bg-[#05111D]">
+        <div class="bg-[auto_80%] bg-left-top bg-no-repeat py-19 sm:bg-[url(assets/Links/background.png)]">
+          <div data-aos="fade-down" class="flex flex-col items-center relative">
+            <h3 class="text-[20px] text-white font-BerlingskeSerifRegular leading-none sm:text-[22px] xl:text-[26px]">A township flanked by</h3>
+            <h2 class="text-[#669999] text-[40px] font-BerlingskeSerifRegular sm:text-[55px] tracking-[2px] xl:text-[65px]">Natural Wonders</h2>
+            <img class="w-[90%] lg:w-[46%] pt-5 sm:w-[65%] z-10" src="assets/Links/map.png" alt="">
+            <div class="flex flex-col -bottom-20 absolute items-center lg:bottom-[30%] lg:right-[8%] max-lg:left-[15%] max-sm:left-[6%] px-5 sm:-bottom-[13%] xl:right-[15%]">
+              <img class="w-[30px] sm:w-[40px]" src="assets/Links/highway 2.png" alt="">
+              <p class="text-[14px] text-center text-white font-PoppinsRegular leading-5 pb-3 sm:text-[16px]">Interchange with <br><span class="text-[#669999]">SOME</span> Highway</p>
+            </div>
+            <div class="flex justify-center w-[20%] absolute bottom-[4%] items-center lg:bottom-[35%] lg:right-[21%] max-lg:left-[22%] max-sm:left-[20%] sm:bottom-[8%]">
+              <hr class="text-white w-[90px] hidden lg:block">
+              <div class="flex border-[#75A3A3] border-4 justify-center rounded-full items-center size-9 sm:size-10">
+                <div class="bg-white rounded-full size-3 sm:size-4"></div>
+              </div>
+              <hr class="text-white w-[50px] lg:hidden sm:w-[90px]">
+            </div>
+            <div class="flex flex-col -bottom-32 absolute items-center lg:bottom-[35%] lg:left-[12%] max-lg:right-[18%] max-sm:right-[10%] sm:-bottom-[22%] xl:left-[16%]">
+              <img class="w-[25px] py-2 sm:w-[30px]" src="assets/Links/car.png" alt="">
+              <p class="text-[12px] text-center text-white font-PoppinsRegular leading-2 sm:text-[14px]">Direct Link to</p>
+              <p class="text-[#669999] text-[14px] text-center font-PoppinsRegular pb-3 sm:text-[16px]">Kuala Lumpur</p>
+            </div>
+            <div class="flex justify-center w-[20%] -bottom-10 absolute items-center lg:bottom-[27%] lg:left-[12%] max-lg:flex-col max-lg:right-[15%] max-sm:right-[11%] sm:-bottom-1 xl:bottom-[30%] xl:left-[13%]">
+              <div class="border-l-[1px] border-white h-12 lg:hidden"></div>
+              <div class="flex border-[#75A3A3] border-4 justify-center rounded-full items-center size-9 sm:size-10">
+                <div class="bg-white rounded-full size-3 sm:size-4"></div>
+              </div>
+              <hr class="text-white w-[50%] max-lg:hidden xl:w-[35%]">
+            </div>
+          </div>
+          <div data-aos="fade-down" class="flex flex-col items-center lg:pt-20 pt-40 sm:pt-30">
+            <h3 class="text-[18px] text-center text-white font-PoppinsRegular px-14 xl:text-[22px]">
+              Designed to be the city of the future - a complete township.
+            </h3>
+            <div class="grid grid-cols-2 w-[90%] gap-6 mt-10 sm:grid-cols-4 xl:w-[80%]">
+              <div class="flex flex-col bg-[#151E35] rounded-3xl items-center lg:px-6 py-5 sm:px-3 xl:px-10">
+                <img class="w-[40%] pb-4 sm:w-[55%]" src="assets/Links/park.png" alt="">
+                <h5 class="text-white font-PoppinsRegular lg:text-[18px] sm:text-[14px] xl:text-[22px]">Central Park</h5>
+                <h5 class="text-[#7DBAB9] font-PoppinsRegular leading-none lg:text-[18px] sm:text-[14px] xl:text-[22px]">at your doorstep</h5>
+              </div>
+              
+              <div class="flex flex-col bg-[#151E35] rounded-3xl items-center lg:px-6 py-5 sm:px-3 xl:px-10">
+                <img class="w-[45%] pb-4 sm:w-[62%]" src="assets/Links/highway.png" alt="">
+                <h5 class="text-white font-PoppinsRegular lg:text-[18px] sm:text-[14px] xl:text-[22px]">Easy access to</h5>
+                <h5 class="text-[#7DBAB9] font-PoppinsRegular leading-none lg:text-[18px] sm:text-[14px] xl:text-[22px]">major highways</h5>
+              </div>
+          
+              <div class="flex flex-col bg-[#151E35] rounded-3xl items-center lg:px-6 py-5 sm:px-3 xl:px-10">
+                <img class="w-[40%] pb-4 sm:w-[55%]" src="assets/Links/wetlands.png" alt="">
+                <h5 class="text-white font-PoppinsRegular lg:text-[18px] sm:text-[14px] xl:text-[22px]">Next to</h5>
+                <h5 class="text-[#7DBAB9] font-PoppinsRegular leading-none lg:text-[18px] sm:text-[14px] xl:text-[22px]">a large wetland</h5>
+              </div>
+          
+              <div class="flex flex-col bg-[#151E35] rounded-3xl items-center lg:px-6 py-5 sm:px-3 xl:px-10">
+                <img class="w-[30%] pb-4 sm:w-[40%]" src="assets/Links/location.png" alt="">
+                <h5 class="text-white font-PoppinsRegular lg:text-[18px] sm:text-[14px] xl:text-[22px]">Strategically</h5>
+                <h5 class="text-[#7DBAB9] font-PoppinsRegular leading-none lg:text-[18px] sm:text-[14px] xl:text-[22px]">located in KL</h5>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="scroll-mt-20">
+      <div data-aos="fade-down" class="flex flex-col items-center lg:py-16 py-14">
+        <h1 class="text-[#669999] text-[40px] text-center font-BerlingskeSerifRegular leading-12 py-8 sm:text-[55px] xl:text-[65px]">Newly Launched Homes</h1>
+        <p class="text-[14px] font-PoppinsRegular sm:text-[17px]">Our exclusive range of custom designed homes</p>
+      </div>
+      <div class="relative">
+        <div class="grid justify-items-center justify-self-center w-[90%] gap-0 lg:grid-cols-2 xl:grid-cols-3">
+          <div data-active="true" class="bg-white shadow-lg w-[350px] home-card my-4 sm:w-[400px]">
+            <img class="w-full" src="assets/Links/image 1.png" alt="">
+            <div class="w-full px-6 py-6">
+              <h2 class="text-[#113558] text-[30px] font-PoppinsExtraBold">Palm Springs</h2>
+              <div class="flex pt-4">
+                <img class="h-[20px] pr-2" src="assets/Links/icon home.png" alt="">
+                <p class="font-PoppinsRegular">2-storey Terrace Homes</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="px-6 py-6">
+              <p class="font-PoppinsRegular">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</p>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-around">
+              <div class="flex flex-col px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Price from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM600,000*</p>
+              </div>
+              <div class="border-gray-300 border-l-1 px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Monthly Repayment from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM3,XXX</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-center items-center px-2 py-4">
+              <a href="#" class="border-[#669999] border-[1.6px] rounded-md mx-1 px-4 py-[7px]">
+                <div class="flex justify-center items-center">
+                  <img class="h-[20px]" src="assets/Links/icon home.png" alt="">
+                  <p class="text-[#669999] text-[20px] font-PoppinsBold px-2">Features</p>
+                </div>
+              </a>
+              <a href="#registration" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 mx-1 px-10 py-[8px]">
+                Register
+              </a>
+            </div>
+          </div>
+          
+          <div data-active="true" class="bg-white shadow-lg w-[350px] home-card my-4 sm:w-[400px]">
+            <img class="w-full" src="assets/Links/image 2.png" alt="">
+            <div class="w-full px-6 py-6">
+              <h2 class="text-[#113558] text-[30px] font-PoppinsExtraBold">Southern Water</h2>
+              <div class="flex pt-4">
+                <img class="h-[20px] pr-2" src="assets/Links/icon home.png" alt="">
+                <p class="font-PoppinsRegular">Waterfront Bungalow</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="px-6 py-6">
+              <p class="font-PoppinsRegular">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</p>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-around">
+              <div class="flex flex-col px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Price from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM2,600,000*</p>
+              </div>
+              <div class="border-gray-300 border-l-1 px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Monthly Repayment from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM1X,XXX</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-center items-center px-2 py-4">
+              <a href="#" class="border-[#669999] border-[1.6px] rounded-md mx-1 px-4 py-[7px]">
+                <div class="flex justify-center items-center">
+                  <img class="h-[20px]" src="assets/Links/icon home.png" alt="">
+                  <p class="text-[#669999] text-[20px] font-PoppinsBold px-2">Features</p>
+                </div>
+              </a>
+              <a href="#registration" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 mx-1 px-10 py-[8px]">
+                Register
+              </a>
+            </div>
+          </div>
+  
+          <div data-active="true" class="bg-white shadow-lg w-[350px] home-card my-4 sm:w-[400px]">
+            <img class="w-full" src="assets/Links/image 3.png" alt="">
+            <div class="w-full px-6 py-6">
+              <h2 class="text-[#113558] text-[30px] font-PoppinsExtraBold">The Ruums</h2>
+              <div class="flex pt-4">
+                <img class="h-[20px] pr-2" src="assets/Links/icon home.png" alt="">
+                <p class="font-PoppinsRegular">Semi-Detached Homes</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="px-6 py-6">
+              <p class="font-PoppinsRegular">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</p>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-around">
+              <div class="flex flex-col px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Price from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM1,000,000*</p>
+              </div>
+              <div class="border-gray-300 border-l-1 px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Monthly Repayment from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM1X,XXX</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-center items-center px-2 py-4">
+              <a href="#" class="border-[#669999] border-[1.6px] rounded-md mx-1 px-4 py-[7px]">
+                <div class="flex justify-center items-center">
+                  <img class="h-[20px]" src="assets/Links/icon home.png" alt="">
+                  <p class="text-[#669999] text-[20px] font-PoppinsBold px-2">Features</p>
+                </div>
+              </a>
+              <a href="#registration" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 mx-1 px-10 py-[8px]">
+                Register
+              </a>
+            </div>
+          </div>
+
+          <div data-active="false" class="bg-white shadow-lg w-[350px] home-card my-4 sm:w-[400px]">
+            <img class="w-full" src="assets/Links/image 2.png" alt="">
+            <div class="w-full px-6 py-6">
+              <h2 class="text-[#113558] text-[30px] font-PoppinsExtraBold">Southern Water</h2>
+              <div class="flex pt-4">
+                <img class="h-[20px] pr-2" src="assets/Links/icon home.png" alt="">
+                <p class="font-PoppinsRegular">Waterfront Bungalow</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="px-6 py-6">
+              <p class="font-PoppinsRegular">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</p>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-around">
+              <div class="flex flex-col px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Price from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM2,600,000*</p>
+              </div>
+              <div class="border-gray-300 border-l-1 px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Monthly Repayment from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM1X,XXX</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-center items-center px-2 py-4">
+              <a href="#" class="border-[#669999] border-[1.6px] rounded-md mx-1 px-4 py-[7px]">
+                <div class="flex justify-center items-center">
+                  <img class="h-[20px]" src="assets/Links/icon home.png" alt="">
+                  <p class="text-[#669999] text-[20px] font-PoppinsBold px-2">Features</p>
+                </div>
+              </a>
+              <a href="#registration" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 mx-1 px-10 py-[8px]">
+                Register
+              </a>
+            </div>
+          </div>
+
+          <div data-active="false" class="bg-white shadow-lg w-[350px] home-card my-4 sm:w-[400px]">
+            <img class="w-full" src="assets/Links/image 3.png" alt="">
+            <div class="w-full px-6 py-6">
+              <h2 class="text-[#113558] text-[30px] font-PoppinsExtraBold">The Ruums</h2>
+              <div class="flex pt-4">
+                <img class="h-[20px] pr-2" src="assets/Links/icon home.png" alt="">
+                <p class="font-PoppinsRegular">Semi-Detached Homes</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="px-6 py-6">
+              <p class="font-PoppinsRegular">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</p>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-around">
+              <div class="flex flex-col px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Price from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM1,000,000*</p>
+              </div>
+              <div class="border-gray-300 border-l-1 px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Monthly Repayment from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM1X,XXX</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-center items-center px-2 py-4">
+              <a href="#" class="border-[#669999] border-[1.6px] rounded-md mx-1 px-4 py-[7px]">
+                <div class="flex justify-center items-center">
+                  <img class="h-[20px]" src="assets/Links/icon home.png" alt="">
+                  <p class="text-[#669999] text-[20px] font-PoppinsBold px-2">Features</p>
+                </div>
+              </a>
+              <a href="#registration" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 mx-1 px-10 py-[8px]">
+                Register
+              </a>
+            </div>
+          </div>
+
+          <div data-active="false" class="bg-white shadow-lg w-[350px] home-card my-4 sm:w-[400px]">
+            <img class="w-full" src="assets/Links/image 1.png" alt="">
+            <div class="w-full px-6 py-6">
+              <h2 class="text-[#113558] text-[30px] font-PoppinsExtraBold">Palm Springs</h2>
+              <div class="flex pt-4">
+                <img class="h-[20px] pr-2" src="assets/Links/icon home.png" alt="">
+                <p class="font-PoppinsRegular">2-storey Terrace Homes</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="px-6 py-6">
+              <p class="font-PoppinsRegular">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry.</p>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-around">
+              <div class="flex flex-col px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Price from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM600,000*</p>
+              </div>
+              <div class="border-gray-300 border-l-1 px-2 py-4">
+                <p class="text-[12px] font-PoppinsRegular">Monthly Repayment from</p>
+                <p class="text-[#669999] text-[20px] font-PoppinsBold">RM3,XXX</p>
+              </div>
+            </div><hr class="text-gray-300">
+            <div class="flex justify-center items-center px-2 py-4">
+              <a href="#" class="border-[#669999] border-[1.6px] rounded-md mx-1 px-4 py-[7px]">
+                <div class="flex justify-center items-center">
+                  <img class="h-[20px]" src="assets/Links/icon home.png" alt="">
+                  <p class="text-[#669999] text-[20px] font-PoppinsBold px-2">Features</p>
+                </div>
+              </a>
+              <a href="#registration" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold home-card hover:opacity-80 mx-1 px-10 py-[8px]">
+                Register
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="flex justify-center items-center py-20">
+          <button id="more-homes-btn" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold home-card hover:opacity-80 px-14 py-3">More Homes</button>
+        </div>
+        <div class="bg-[#06121D] h-[500px] w-full absolute bottom-0 right-0 z-[-1]">
+          <img class="absolute bottom-0 max-sm:hidden object-contain right-0" src="assets/Links/element.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="registration" class="scroll-mt-20">
+      <div data-aos="fade-down" class="flex flex-col w-full items-center py-16">
+        <h1 class="text-[#669999] text-[40px] font-BerlingskeSerifRegular sm:text-[55px] xl:text-[65px]">Register Now</h1>
+        <p class="font-PoppinsRegular max-sm:text-[14px]">Our sales team will be in touch with you shortly</p>
+        <form class="w-[70%] sm:w-[60%] xl:w-[50%]">
+          <div class="flex flex-col justify-center items-center py-10">
+            <input required class="border-b-1 border-gray-500 text-[14px] w-full focus:outline-none font-PoppinsRegular pb-3 placeholder-[#9ca3af] pt-10 sm:border-b-2 sm:text-[17px]" placeholder="Your Name">
+            <input required class="border-b-1 border-gray-500 text-[14px] w-full focus:outline-none font-PoppinsRegular pb-3 placeholder-[#9ca3af] pt-10 sm:border-b-2 sm:text-[17px]" placeholder="Your Phone Number">
+            <input required class="border-b-1 border-gray-500 text-[14px] w-full focus:outline-none font-PoppinsRegular pb-3 placeholder-[#9ca3af] pt-10 sm:border-b-2 sm:text-[17px]" placeholder="Your Email Address">
+            <select required class="border-b-1 border-gray-500 text-[14px] text-gray-900 w-full focus:outline-none font-PoppinsRegular pb-3 peer pt-10 sm:border-b-2 sm:text-[17px]">
+              <option value="" selected disabled>Choose Project</option>
+              <option>Project 1</option>
+              <option>Project 2</option>
+            </select>
+            <button class="bg-[#669999] rounded-md text-[18px] text-white w-[40%] font-PoppinsBold mt-12 py-3 sm:text-[22px] sm:w-[25%] uppercase xl:w-[20%]">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="flex bg-[#05111D] justify-center w-full">
+        <div class="flex justify-center w-[75%] items-start max-sm:flex-col py-10 sm:items-start sm:justify-between sm:px-6 sm:w-[100%] xl:px-20 xl:py-14">
+          <div class="flex max-sm:py-4 mx-2 sm:w-[30%]">
+            <img class="h-[20px] lg:h-[20px] lg:px-5 px-4 sm:h-[16px] sm:px-2 xl:h-[25px]" src="assets/Links/icon location.png" alt="">
+            <p class="text-white lg:text-[14px] sm:text-[12px] xl:text-[18px]">Unit C-3-7, Block C, <br> Pacific Place Commercial Centre, <br> Jalan PJU 1A/4, Ara Damansara, <br> 47301 Petaling Jaya.</p>
+          </div>
+          <div class="flex max-sm:py-4 mx-2 sm:w-[25%]">
+            <img class="h-[20px] lg:h-[20px] lg:px-5 px-4 sm:h-[16px] sm:px-2 xl:h-[25px]" src="assets/Links/time.png" alt="">
+            <p class="text-white lg:text-[14px] sm:text-[12px] xl:text-[18px]">Mon - Fri | 9 AM - 6 PM <br> Sat - Sun | 10 AM - 5 PM</p>
+          </div>
+          <div class="flex max-sm:py-4 mx-2 sm:w-[25%]">
+            <img class="h-[20px] lg:h-[20px] lg:px-5 px-4 sm:h-[16px] sm:px-2 xl:h-[25px]" src="assets/Links/phone.png" alt="">
+            <p class="text-white lg:text-[14px] sm:text-[12px] xl:text-[18px]">03 1234 1234</p>
+          </div>
+          <div class="flex flex-col justify-center w-[20%] lg:mx-2 max-sm:hidden">
+            <p class="text-white font-PoppinsRegular sm:text-[12px] xl:text-[18px]">A Development by</p>
+            <img class="lg:w-[60%] py-5 sm:w-[80%]" src="assets/Links/logo.png" alt=""> 
+          </div>
+        </div>
+      </div>
+      <div class="bg-black text-center max-sm:px-30 py-5 sm:py-3 xl:py-5">
+        <h5 class="text-[14px] text-gray-400 lg:text-[14px] sm:text-[12px]">© DIGITAL SYMPHONY 2024 <span class="max-lg:hidden">|</span> DISLAIMER | PRIVACY POLICY</h5>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    AOS.init();
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu.classList.contains('opacity-0')) {
+        menu.classList.remove('opacity-0', 'invisible');
+        menu.classList.add('opacity-80', 'visible');
+      } else {
+        menu.classList.add('opacity-0', 'invisible');
+        menu.classList.remove('opacity-80', 'visible');
+      }
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const homeCards = document.querySelectorAll(".home-card");
+      const moreHomesBtn = document.getElementById("more-homes-btn");
+
+      // Check if there are hidden cards; if none, hide the button
+      function updateButtonVisibility() {
+          let hiddenCards = Array.from(homeCards).filter(card => card.dataset.active === "false");
+          if (hiddenCards.length === 0) {
+              moreHomesBtn.style.display = "none"; // Hide only when all cards are shown
+          } else {
+              moreHomesBtn.style.display = "block"; // Ensure it's visible when needed
+          }
+      }
+
+      updateButtonVisibility(); // Ensure button shows/hides correctly on load
+
+      moreHomesBtn.addEventListener("click", function () {
+          let hiddenCards = Array.from(homeCards).filter(card => card.dataset.active === "false");
+
+          // Show up to 3 more hidden cards
+          hiddenCards.slice(0, 3).forEach(card => {
+              card.dataset.active = "true";
+          });
+
+          updateButtonVisibility(); // Check and update button visibility after clicking
+      });
+    });
+</script>
+</html>

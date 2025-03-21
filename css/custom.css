@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'BerlingskeSerif-Regular';
+  src: url('../assets/fonts/BerlingskeSerif-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/Helvetica.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('../assets/fonts/OpenSans-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('../assets/fonts/Poppins-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins-ExtraBold';
+  src: url('../assets/fonts/Poppins-ExtraBold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('../assets/fonts/Poppins-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-BerlingskeSerifRegular{font-family: 'BerlingskeSerif-Regular';}
+.font-Helvetica{font-family: 'Helvetica';}
+.font-OpenSansRegular{font-family: 'OpenSans-Regular';}
+.font-PoppinsBold{font-family: 'Poppins-Bold';}
+.font-PoppinsExtraBold{font-family: 'Poppins-ExtraBold';}
+.font-PoppinsRegular{font-family: 'Poppins-Regular';}
+
+select:invalid {
+  color: #9ca3af; /* Tailwind's gray-400 */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.home-card {
+  display: none; /* Default hidden */
+}
+
+.home-card[data-active="true"] {
+  display: block; /* Only active cards are shown */
+}
+
+#more-homes-btn {
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+#more-homes-btn.hidden {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
