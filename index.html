@@ -380,6 +380,7 @@
         </div>
         <div class="flex justify-center items-center py-16">
           <button id="more-homes-btn" class="bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 px-14 py-3">More Homes</button>
+          <button id="see-less-btn" class="hidden bg-[#669999] rounded-md text-[20px] text-white font-PoppinsBold hover:opacity-80 px-14 py-3">See Less</button>
         </div>
         <div class="bg-[#06121D] h-[500px] w-full absolute bottom-0 right-0 z-[-1]">
           <img class="absolute bottom-0 max-sm:hidden object-contain right-0" src="assets/Links/element.png" alt="">
@@ -439,66 +440,80 @@
   </body>
 
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 1000, // Animation speed
+      once: false, // Allows animation to trigger multiple times
+      mirror: true // ✅ Enables animation when scrolling back up
+    });
 
     document.getElementById('menu-toggle').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      if (menu.classList.contains('opacity-0')) {
-        menu.classList.remove('opacity-0', 'invisible');
-        menu.classList.add('opacity-80', 'visible');
-      } else {
-        menu.classList.add('opacity-0', 'invisible');
-        menu.classList.remove('opacity-80', 'visible');
-      }
-    });
-    
-    document.addEventListener("DOMContentLoaded", function () {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('opacity-0')) {
+          menu.classList.remove('opacity-0', 'invisible');
+          menu.classList.add('opacity-80', 'visible');
+        } else {
+          menu.classList.add('opacity-0', 'invisible');
+          menu.classList.remove('opacity-80', 'visible');
+        }
+      });
+      
+      document.addEventListener("DOMContentLoaded", function () {
       const homeCards = document.querySelectorAll(".home-card");
       const moreHomesBtn = document.getElementById("more-homes-btn");
+      const seeLessBtn = document.getElementById("see-less-btn");
       const buttonContainer = moreHomesBtn.parentElement;
 
       function getCardsToShow() {
           const width = window.innerWidth;
-          if (width >= 1024 && width < 1280) return 4;
-          return 3;
+          return width >= 1024 && width < 1280 ? 4 : 3;
       }
 
       function initializeCards() {
-          const cardsToShow = getCardsToShow();
-          homeCards.forEach((card, index) => {
-              card.dataset.active = index < cardsToShow ? "true" : "false";
-          });
-          updateButtonVisibility();
+        console.log("initializeCards() triggered!");
+
+        sessionStorage.clear();
+
+        const cardsToShow = getCardsToShow();
+
+        homeCards.forEach((card, index) => {
+            card.dataset.active = index < cardsToShow ? "true" : "false";
+        });
+
+        updateButtonVisibility();
       }
 
       function updateButtonVisibility() {
           const hiddenCards = Array.from(homeCards).filter(card => card.dataset.active !== "true");
-          
+
           if (hiddenCards.length === 0) {
-              moreHomesBtn.style.display = "none";
-              buttonContainer.classList.add("hidden");
+              moreHomesBtn.classList.add("hidden");
+              seeLessBtn.classList.remove("hidden");
           } else {
-              moreHomesBtn.style.display = "block";
-              buttonContainer.classList.remove("hidden");
+              moreHomesBtn.classList.remove("hidden");
+              seeLessBtn.classList.add("hidden");
           }
       }
 
       moreHomesBtn.addEventListener("click", function () {
-          const hiddenCards = Array.from(homeCards).filter(card => card.dataset.active !== "true");
-          const cardsToShow = getCardsToShow();
+        const hiddenCards = Array.from(homeCards).filter(card => card.dataset.active !== "true");
+        const cardsToShow = getCardsToShow();
 
-          hiddenCards.slice(0, cardsToShow).forEach((card, index) => {
-              setTimeout(() => {
-                  card.dataset.active = "true";
-              }, index * 100);
-          });
+        hiddenCards.slice(0, cardsToShow).forEach((card, index) => {
+            setTimeout(() => {
+                card.dataset.active = "true";
+            }, index * 100);
+        });
 
-          setTimeout(updateButtonVisibility, 500);
+        setTimeout(updateButtonVisibility, 500);
       });
 
-      initializeCards();
-      window.addEventListener("resize", initializeCards);
-  });
+      seeLessBtn.addEventListener("click", function () {
+        homeCards.forEach((card, index) => {
+            card.dataset.active = index < getCardsToShow() ? "true" : "false";
+        });
 
+        updateButtonVisibility();
+      });
+    });  
 </script>
 </html>
