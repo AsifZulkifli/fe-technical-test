@@ -57,6 +57,15 @@ select:invalid {
   color: #9ca3af; /* Tailwind's gray-400 */
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%; /* Ensure it takes full width */
+  display: block; /* Ensures proper block rendering */
+  background-color: transparent; /* Prevents unwanted iOS background */
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -91,4 +100,5 @@ html, body {
   overflow: hidden;
   padding: 0;
   margin: 0;
+  position: absolute;
 }
