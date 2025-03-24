@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'BerlingskeSerif-Regular';
-  src: url('../assets/fonts/BerlingskeSerif-Regular.ttf') format('opentype');
+  src: url('../assets/Fonts/BerlingskeSerif-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Helvetica';
-  src: url('../assets/fonts/Helvetica.ttf') format('opentype');
+  src: url('../assets/Fonts/Helvetica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'OpenSans-Regular';
-  src: url('../assets/fonts/OpenSans-Regular.ttf') format('opentype');
+  src: url('../assets/Fonts/OpenSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Poppins-Bold';
-  src: url('../assets/fonts/Poppins-Bold.otf') format('opentype');
+  src: url('../assets/Fonts/Poppins-Bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: 'Poppins-ExtraBold';
-  src: url('../assets/fonts/Poppins-ExtraBold.otf') format('opentype');
+  src: url('../assets/Fonts/Poppins-ExtraBold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
   font-family: 'Poppins-Regular';
-  src: url('../assets/fonts/Poppins-Regular.otf') format('opentype');
+  src: url('../assets/Fonts/Poppins-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
